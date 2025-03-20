@@ -63,6 +63,7 @@ ren_energy_selected = ren_energy_selected.apply(pd.to_numeric, errors='coerce')
 CO2_selected_clean = CO2_selected.dropna()
 ren_energy_selected_clean = ren_energy_selected.dropna()
 
+
 #focusing on the most recent 20 years
 recent_years = [str(year) for year in range(2000, 2021)]
 CO2_recent = CO2_selected.loc[recent_years]
@@ -85,6 +86,7 @@ print('Correlation of CO2 emissions with Renewable Energy Use for the most recen
 beginning_corr = CO2_beginning_clean.corrwith(ren_energy_beginning_clean)
 print('Correlation for 1990-1999 is: ', beginning_corr)
 
+
 #plotting the data
 plt.figure(figsize=(12,8))
 for country in selected_countries:
@@ -105,3 +107,5 @@ plt.title('Renewable Energy Use over Time')
 plt.legend(title='Countries')
 plt.xticks(rotation=45)
 plt.show()
+
+
